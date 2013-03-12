@@ -1,9 +1,9 @@
 module Okami::Mouse  
   DefaultKeySymbols = {
-    Gosu::MsLeft => :left,
-    Gosu::MsRight => :right,
-    Gosu::MsMiddle => :middle,
-    Gosu::MsWheelUp => :wheel_up,
+    Gosu::MsLeft      => :left,
+    Gosu::MsRight     => :right,
+    Gosu::MsMiddle    => :middle,
+    Gosu::MsWheelUp   => :wheel_up,
     Gosu::MsWheelDown => :wheel_down
   }.freeze
 
@@ -33,9 +33,12 @@ module Okami::Mouse
       
       return false
     end
-    def offscreen?; not onscreen? end
+    
+    def offscreen?
+      not onscreen?
+    end
 
-    def show; $window.cursor_visible = true end
+    def show; $window.cursor_visible = true  end
     def hide; $window.cursor_visible = false end
     
     def add_key_down_listener listener_method
@@ -89,12 +92,14 @@ module Okami::Mouse
   
     def button_down id
       key = @@key_symbols[id]
-      @@key_down_listeners.each { |listener, method| method.call key } if key
+      return unless key
+      @@key_down_listeners.each { |listener, method| method.call key }
     end
 
     def button_up id
       key = @@key_symbols[id]
-      @@key_up_listeners.each { |listener, method| method.call key } if key
+      return unless key
+      @@key_up_listeners.each { |listener, method| method.call key }
     end
   end
 
