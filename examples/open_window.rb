@@ -1,4 +1,5 @@
-require './okami'
+$LOAD_PATH << '../'
+require 'lib/okami.rb'
 
 class Window < Okami::Window
   def initialize

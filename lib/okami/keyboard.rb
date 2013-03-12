@@ -1,4 +1,4 @@
-require './operating_system'
+require 'okami/operating_system'
 
 module Okami::Keyboard  
   DefaultKeySymbols = {
