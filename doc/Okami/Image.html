@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Okami::Image - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/okami/image.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Gosu::Image
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-5B-5D">::[]</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-new_tiles">::new_tiles</a>
+    
+    <li><a href="#method-c-require">::require</a>
+    
+    <li><a href="#method-c-require_tiles">::require_tiles</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../readme_txt.html">readme</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Okami.html">Okami</a>
+  
+    <li><a href="../Okami/HitMask.html">Okami::HitMask</a>
+  
+    <li><a href="../Okami/Image.html">Okami::Image</a>
+  
+    <li><a href="../Okami/Keyboard.html">Okami::Keyboard</a>
+  
+    <li><a href="../Okami/Mouse.html">Okami::Mouse</a>
+  
+    <li><a href="../Okami/MouseTrap.html">Okami::MouseTrap</a>
+  
+    <li><a href="../Okami/Sprite.html">Okami::Sprite</a>
+  
+    <li><a href="../Okami/Window.html">Okami::Window</a>
+  
+    <li><a href="../OS.html">OS</a>
+  
+    <li><a href="../Window.html">Window</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Okami::Image</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ImageTiles">ImageTiles
+        
+        <dd class="description">
+        
+      
+        <dt id="Images">Images
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-load_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">load_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The directory to load the images from</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-tileable" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tileable</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Set this for a default value for wether the images should be tileable or
+not</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-5B-5D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(path, tileable=@tileable, *src_rect)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Image.html#method-c-require">require</a>
+        </div>
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(path, tileable=@tileable, *src_rect)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/okami/image.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tileable</span>=<span class="ruby-ivar">@tileable</span>, *<span class="ruby-identifier">src_rect</span>
+  <span class="ruby-keyword">super</span> <span class="ruby-identifier">$window</span>, <span class="ruby-ivar">@load_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tileable</span>, *<span class="ruby-identifier">src_rect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-new_tiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_tiles</span><span
+            class="method-args">(path, tile_width, tile_height, tileable=@tileable)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_tiles-source">
+            <pre><span class="ruby-comment"># File lib/okami/image.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_tiles</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tile_width</span>, <span class="ruby-identifier">tile_height</span>, <span class="ruby-identifier">tileable</span>=<span class="ruby-ivar">@tileable</span>             
+  <span class="ruby-keyword">super</span> <span class="ruby-identifier">$window</span>, <span class="ruby-ivar">@load_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tile_width</span>, <span class="ruby-identifier">tile_height</span>, <span class="ruby-identifier">tileable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new_tiles-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new_tiles-method -->
+
+    
+      <div id="method-c-require" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require</span><span
+            class="method-args">(path, tileable=@tileable, *src_rect)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>require / [] will cache the images so they’re only loaded once.</p>
+          
+
+          
+          <div class="method-source-code" id="require-source">
+            <pre><span class="ruby-comment"># File lib/okami/image.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tileable</span>=<span class="ruby-ivar">@tileable</span>, *<span class="ruby-identifier">src_rect</span>
+  <span class="ruby-constant">Images</span>[ <span class="ruby-ivar">@load_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">src_rect</span>.<span class="ruby-identifier">to_s</span> ] <span class="ruby-operator">||=</span> <span class="ruby-identifier">load</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tileable</span>, *<span class="ruby-identifier">src_rect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Image.html#method-c-5B-5D">[]</a>
+        </div>
+        
+
+        
+      </div><!-- require-method -->
+
+    
+      <div id="method-c-require_tiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_tiles</span><span
+            class="method-args">(path, tile_width, tile_height, tileable=@tileable)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="require_tiles-source">
+            <pre><span class="ruby-comment"># File lib/okami/image.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">require_tiles</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tile_width</span>, <span class="ruby-identifier">tile_height</span>, <span class="ruby-identifier">tileable</span>=<span class="ruby-ivar">@tileable</span>
+  <span class="ruby-constant">ImageTiles</span>[ <span class="ruby-node">&quot;size:#{tile_width},#{tile_height}&amp;&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@load_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">path</span> ] <span class="ruby-operator">||=</span> <span class="ruby-identifier">load_tiles</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">tile_width</span>, <span class="ruby-identifier">tile_height</span>, <span class="ruby-identifier">tileable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require_tiles-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- require_tiles-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

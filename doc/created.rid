@@ -1,0 +1,12 @@
+Wed, 13 Mar 2013 14:56:14 +0100
+./examples/open_window.rb	Wed, 13 Mar 2013 14:26:57 +0100
+./lib/okami/hit_mask.rb	Wed, 13 Mar 2013 14:46:24 +0100
+./lib/okami/image.rb	Wed, 13 Mar 2013 14:46:41 +0100
+./lib/okami/keyboard.rb	Wed, 13 Mar 2013 14:19:50 +0100
+./lib/okami/mouse.rb	Tue, 12 Mar 2013 13:15:09 +0100
+./lib/okami/mouse_trap.rb	Wed, 13 Mar 2013 14:49:43 +0100
+./lib/okami/os.rb	Tue, 12 Mar 2013 13:12:22 +0100
+./lib/okami/sprite.rb	Wed, 13 Mar 2013 14:37:27 +0100
+./lib/okami/window.rb	Wed, 13 Mar 2013 14:36:53 +0100
+./lib/okami.rb	Wed, 13 Mar 2013 14:27:04 +0100
+./readme.txt	Tue, 12 Mar 2013 09:49:38 +0100

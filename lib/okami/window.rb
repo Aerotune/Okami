@@ -1,11 +1,6 @@
 module Okami
-  def self.method_missing *args
-    Gosu.send *args
-  end
-  
-  def self.const_missing const
-    Gosu.const_get const
-  end
+  def self.method_missing *args; Gosu.send *args      end
+  def self.const_missing const;  Gosu.const_get const end
   
   class Window < Gosu::Window
     include Gosu
@@ -53,7 +48,6 @@ module Okami
       end
     end
     
-    
-  end
-end
+  end # Window
+end # Okami
 

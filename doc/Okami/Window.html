@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Okami::Window - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/okami/window.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Gosu::Window
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Gosu</span>
+  
+  
+  
+    <li><a class="include" href="../Okami.html">Okami</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-inherited">::inherited</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-button_down">#button_down</a>
+    
+    <li><a href="#method-i-button_up">#button_up</a>
+    
+    <li><a href="#method-i-calculate_dt">#calculate_dt</a>
+    
+    <li><a href="#method-i-hide_cursor">#hide_cursor</a>
+    
+    <li><a href="#method-i-needs_cursor-3F">#needs_cursor?</a>
+    
+    <li><a href="#method-i-retrofy">#retrofy</a>
+    
+    <li><a href="#method-i-show_cursor">#show_cursor</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../readme_txt.html">readme</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Okami.html">Okami</a>
+  
+    <li><a href="../Okami/HitMask.html">Okami::HitMask</a>
+  
+    <li><a href="../Okami/Image.html">Okami::Image</a>
+  
+    <li><a href="../Okami/Keyboard.html">Okami::Keyboard</a>
+  
+    <li><a href="../Okami/Mouse.html">Okami::Mouse</a>
+  
+    <li><a href="../Okami/MouseTrap.html">Okami::MouseTrap</a>
+  
+    <li><a href="../Okami/Sprite.html">Okami::Sprite</a>
+  
+    <li><a href="../Okami/Window.html">Okami::Window</a>
+  
+    <li><a href="../OS.html">OS</a>
+  
+    <li><a href="../Window.html">Window</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Okami::Window</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-cursor_visible" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">cursor_visible</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-inherited" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inherited</span><span
+            class="method-args">(subclass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inherited-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">subclass</span>)
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">subclass</span>.<span class="ruby-identifier">method_added</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value">:update</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/^(.+?):(\d+)(?::in `(.*)')?/</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">match</span> <span class="ruby-regexp">/eval/</span>
+      <span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;def update_hook\n calculate_dt\n update_without_hook\nend&quot;</span>
+      <span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;alias update_without_hook update&quot;</span>
+      <span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;alias update update_hook&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inherited-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inherited-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> *<span class="ruby-identifier">args</span>
+  <span class="ruby-ivar">@prev_t</span> = <span class="ruby-constant">Gosu</span><span class="ruby-operator">::</span><span class="ruby-identifier">milliseconds</span>
+  <span class="ruby-identifier">$window</span> = <span class="ruby-keyword">super</span> *<span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-button_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_down</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button_down-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_down</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-constant">Okami</span><span class="ruby-operator">::</span><span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">button_down</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-constant">Okami</span><span class="ruby-operator">::</span><span class="ruby-constant">Mouse</span>.<span class="ruby-identifier">button_down</span> <span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- button_down-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- button_down-method -->
+
+    
+      <div id="method-i-button_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_up</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button_up-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_up</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-constant">Okami</span><span class="ruby-operator">::</span><span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">button_up</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-constant">Okami</span><span class="ruby-operator">::</span><span class="ruby-constant">Mouse</span>.<span class="ruby-identifier">button_up</span> <span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- button_up-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- button_up-method -->
+
+    
+      <div id="method-i-calculate_dt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calculate_dt</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="calculate_dt-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calculate_dt</span>
+  <span class="ruby-ivar">@t</span>       = <span class="ruby-constant">Gosu</span><span class="ruby-operator">::</span><span class="ruby-identifier">milliseconds</span>
+  <span class="ruby-ivar">@dt</span>      = (<span class="ruby-ivar">@t</span><span class="ruby-operator">-</span><span class="ruby-ivar">@prev_t</span>)<span class="ruby-operator">/</span><span class="ruby-value">1000.0</span>
+  <span class="ruby-ivar">@prev_t</span>  = <span class="ruby-ivar">@t</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- calculate_dt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- calculate_dt-method -->
+
+    
+      <div id="method-i-hide_cursor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hide_cursor</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hide_cursor-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hide_cursor</span>;   <span class="ruby-ivar">@cursor_visible</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- hide_cursor-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hide_cursor-method -->
+
+    
+      <div id="method-i-needs_cursor-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">needs_cursor?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="needs_cursor-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">needs_cursor?</span>; <span class="ruby-ivar">@cursor_visible</span>         <span class="ruby-keyword">end</span></pre>
+          </div><!-- needs_cursor-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- needs_cursor-3F-method -->
+
+    
+      <div id="method-i-retrofy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">retrofy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="retrofy-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">retrofy</span>
+  <span class="ruby-constant">Gosu</span><span class="ruby-operator">::</span><span class="ruby-identifier">enable_undocumented_retrofication</span>        <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Unable to use Gosu::enable_undocumented_retrofication&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- retrofy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- retrofy-method -->
+
+    
+      <div id="method-i-show_cursor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show_cursor</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="show_cursor-source">
+            <pre><span class="ruby-comment"># File lib/okami/window.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show_cursor</span>;   <span class="ruby-ivar">@cursor_visible</span> = <span class="ruby-keyword">true</span>  <span class="ruby-keyword">end</span></pre>
+          </div><!-- show_cursor-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show_cursor-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

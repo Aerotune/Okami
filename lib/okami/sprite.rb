@@ -57,7 +57,6 @@ class Okami::Sprite
   
   attr_reader :mode
   def mode= symbol
-    
     case symbol
     when :loop
       @direction = :forward
@@ -132,7 +131,7 @@ class Okami::Sprite
       
     end
   end
-end
+end # Okami::Sprite
 
 =begin
 ## Example ##

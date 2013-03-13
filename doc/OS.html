@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module OS - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/okami/os.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-linux-3F">::linux?</a>
+    
+    <li><a href="#method-c-mac-3F">::mac?</a>
+    
+    <li><a href="#method-c-system">::system</a>
+    
+    <li><a href="#method-c-to_s">::to_s</a>
+    
+    <li><a href="#method-c-to_sym">::to_sym</a>
+    
+    <li><a href="#method-c-unknown-3F">::unknown?</a>
+    
+    <li><a href="#method-c-windows-3F">::windows?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./readme_txt.html">readme</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Okami.html">Okami</a>
+  
+    <li><a href="./Okami/HitMask.html">Okami::HitMask</a>
+  
+    <li><a href="./Okami/Image.html">Okami::Image</a>
+  
+    <li><a href="./Okami/Keyboard.html">Okami::Keyboard</a>
+  
+    <li><a href="./Okami/Mouse.html">Okami::Mouse</a>
+  
+    <li><a href="./Okami/MouseTrap.html">Okami::MouseTrap</a>
+  
+    <li><a href="./Okami/Sprite.html">Okami::Sprite</a>
+  
+    <li><a href="./Okami/Window.html">Okami::Window</a>
+  
+    <li><a href="./OS.html">OS</a>
+  
+    <li><a href="./Window.html">Window</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module OS</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-linux-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">linux?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="linux-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">linux?</span>;   <span class="ruby-identifier">@@system</span> <span class="ruby-operator">==</span> <span class="ruby-value">:linux</span>        <span class="ruby-keyword">end</span></pre>
+          </div><!-- linux-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- linux-3F-method -->
+
+    
+      <div id="method-c-mac-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mac?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mac-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mac?</span>;     <span class="ruby-identifier">@@system</span> <span class="ruby-operator">==</span> <span class="ruby-value">:mac</span>          <span class="ruby-keyword">end</span></pre>
+          </div><!-- mac-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mac-3F-method -->
+
+    
+      <div id="method-c-system" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">system</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="system-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">system</span>;   <span class="ruby-identifier">@@system</span>                  <span class="ruby-keyword">end</span></pre>
+          </div><!-- system-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- system-method -->
+
+    
+      <div id="method-c-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>;     <span class="ruby-identifier">@@system</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">capitalize</span>  <span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-c-to_sym" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_sym</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_sym-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_sym</span>;   <span class="ruby-identifier">@@system</span>                  <span class="ruby-keyword">end</span></pre>
+          </div><!-- to_sym-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_sym-method -->
+
+    
+      <div id="method-c-unknown-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unknown?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unknown-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unknown?</span>; <span class="ruby-identifier">@@system</span> <span class="ruby-operator">==</span> <span class="ruby-value">:unknown</span>      <span class="ruby-keyword">end</span></pre>
+          </div><!-- unknown-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unknown-3F-method -->
+
+    
+      <div id="method-c-windows-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">windows?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="windows-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/os.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">windows?</span>; <span class="ruby-identifier">@@system</span> <span class="ruby-operator">==</span> <span class="ruby-value">:windows</span>      <span class="ruby-keyword">end</span></pre>
+          </div><!-- windows-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- windows-3F-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

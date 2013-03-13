@@ -1,4 +1,4 @@
-require 'okami/operating_system'
+require 'okami/os'
 
 module Okami::Keyboard  
   DefaultKeySymbols = {
@@ -125,7 +125,7 @@ module Okami::Keyboard
       
     end
   
-    ## Returns true if all key_symbols is down
+    ## Returns true if all key_symbol arguments is down
     def keys_down? *key_symbols
       key_symbols.each do |key_symbol|
         return false unless key_down? key_symbol
@@ -133,7 +133,7 @@ module Okami::Keyboard
       return true
     end
   
-    ## Returns true if one of the key_symbols is down
+    ## Returns true if one of the key_symbol arguments is down
     def any_key_down? *key_symbols
       key_symbols << :any_key if key_symbols.empty?
       key_symbols.each do |key_symbol|

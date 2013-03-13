@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Okami::Mouse - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/okami/mouse.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add_key_down_listener">::add_key_down_listener</a>
+    
+    <li><a href="#method-c-add_key_up_listener">::add_key_up_listener</a>
+    
+    <li><a href="#method-c-any_key_down-3F">::any_key_down?</a>
+    
+    <li><a href="#method-c-any_of_keys_down-3F">::any_of_keys_down?</a>
+    
+    <li><a href="#method-c-button_down">::button_down</a>
+    
+    <li><a href="#method-c-button_up">::button_up</a>
+    
+    <li><a href="#method-c-hide">::hide</a>
+    
+    <li><a href="#method-c-key_down-3F">::key_down?</a>
+    
+    <li><a href="#method-c-key_symbols">::key_symbols</a>
+    
+    <li><a href="#method-c-key_symbols-3D">::key_symbols=</a>
+    
+    <li><a href="#method-c-keys_down-3F">::keys_down?</a>
+    
+    <li><a href="#method-c-offscreen-3F">::offscreen?</a>
+    
+    <li><a href="#method-c-onscreen-3F">::onscreen?</a>
+    
+    <li><a href="#method-c-remove_listener">::remove_listener</a>
+    
+    <li><a href="#method-c-show">::show</a>
+    
+    <li><a href="#method-c-x">::x</a>
+    
+    <li><a href="#method-c-x-3D">::x=</a>
+    
+    <li><a href="#method-c-y">::y</a>
+    
+    <li><a href="#method-c-y-3D">::y=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../readme_txt.html">readme</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Okami.html">Okami</a>
+  
+    <li><a href="../Okami/HitMask.html">Okami::HitMask</a>
+  
+    <li><a href="../Okami/Image.html">Okami::Image</a>
+  
+    <li><a href="../Okami/Keyboard.html">Okami::Keyboard</a>
+  
+    <li><a href="../Okami/Mouse.html">Okami::Mouse</a>
+  
+    <li><a href="../Okami/MouseTrap.html">Okami::MouseTrap</a>
+  
+    <li><a href="../Okami/Sprite.html">Okami::Sprite</a>
+  
+    <li><a href="../Okami/Window.html">Okami::Window</a>
+  
+    <li><a href="../OS.html">OS</a>
+  
+    <li><a href="../Window.html">Window</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Okami::Mouse</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DefaultKeySymbols">DefaultKeySymbols
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add_key_down_listener" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_key_down_listener</span><span
+            class="method-args">(listener_method)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_key_down_listener-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_key_down_listener</span> <span class="ruby-identifier">listener_method</span>
+  <span class="ruby-identifier">@@key_down_listeners</span>[ <span class="ruby-identifier">listener_method</span>.<span class="ruby-identifier">receiver</span> ] = <span class="ruby-identifier">listener_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_key_down_listener-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_key_down_listener-method -->
+
+    
+      <div id="method-c-add_key_up_listener" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_key_up_listener</span><span
+            class="method-args">(listener_method)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_key_up_listener-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_key_up_listener</span> <span class="ruby-identifier">listener_method</span>
+  <span class="ruby-identifier">@@key_up_listeners</span>[ <span class="ruby-identifier">listener_method</span>.<span class="ruby-identifier">receiver</span> ] = <span class="ruby-identifier">listener_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_key_up_listener-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_key_up_listener-method -->
+
+    
+      <div id="method-c-any_key_down-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">any_key_down?</span><span
+            class="method-args">(*key_symbols)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if one of the <a
+href="Mouse.html#method-c-key_symbols">::key_symbols</a> is down</p>
+          
+
+          
+          <div class="method-source-code" id="any_key_down-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">any_key_down?</span> *<span class="ruby-identifier">key_symbols</span>
+  <span class="ruby-identifier">key_symbols</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:any_key</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key_symbols</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">key_symbols</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key_symbol</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key_down?</span> <span class="ruby-identifier">key_symbol</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key_symbols</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- any_key_down-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mouse.html#method-c-any_of_keys_down-3F">any_of_keys_down?</a>
+        </div>
+        
+
+        
+      </div><!-- any_key_down-3F-method -->
+
+    
+      <div id="method-c-any_of_keys_down-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">any_of_keys_down?</span><span
+            class="method-args">(*key_symbols)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mouse.html#method-c-any_key_down-3F">any_key_down?</a>
+        </div>
+        
+      </div><!-- any_of_keys_down-3F-method -->
+
+    
+      <div id="method-c-button_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_down</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button_down-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_down</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">@@key_symbols</span>[<span class="ruby-identifier">id</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">@@key_down_listeners</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">listener</span>, <span class="ruby-identifier">method</span><span class="ruby-operator">|</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">key</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- button_down-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- button_down-method -->
+
+    
+      <div id="method-c-button_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_up</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button_up-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_up</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">@@key_symbols</span>[<span class="ruby-identifier">id</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">@@key_up_listeners</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">listener</span>, <span class="ruby-identifier">method</span><span class="ruby-operator">|</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">key</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- button_up-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- button_up-method -->
+
+    
+      <div id="method-c-hide" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hide</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hide-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hide</span>; <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">cursor_visible</span> = <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- hide-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hide-method -->
+
+    
+      <div id="method-c-key_down-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_down?</span><span
+            class="method-args">(key_symbol)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key_down-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key_down?</span> <span class="ruby-identifier">key_symbol</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">key_symbol</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:any_key</span>; <span class="ruby-identifier">any_key_down?</span> *<span class="ruby-identifier">@@key_symbols</span>.<span class="ruby-identifier">values</span>
+  <span class="ruby-keyword">else</span>;   <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">button_down?</span> <span class="ruby-identifier">@@key_symbols</span>.<span class="ruby-identifier">key</span>( <span class="ruby-identifier">key_symbol</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key_down-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key_down-3F-method -->
+
+    
+      <div id="method-c-key_symbols" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_symbols</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key_symbols-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key_symbols</span>;       <span class="ruby-identifier">@@key_symbols</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- key_symbols-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key_symbols-method -->
+
+    
+      <div id="method-c-key_symbols-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_symbols=</span><span
+            class="method-args">(hash;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key_symbols-3D-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key_symbols=</span> <span class="ruby-identifier">hash</span>; <span class="ruby-identifier">@@key_symbols</span> = <span class="ruby-identifier">hash</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- key_symbols-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key_symbols-3D-method -->
+
+    
+      <div id="method-c-keys_down-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keys_down?</span><span
+            class="method-args">(*key_symbols)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if all <a
+href="Mouse.html#method-c-key_symbols">::key_symbols</a> is down</p>
+          
+
+          
+          <div class="method-source-code" id="keys_down-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">keys_down?</span> *<span class="ruby-identifier">key_symbols</span>
+  <span class="ruby-identifier">key_symbols</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key_symbol</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">key_down?</span> <span class="ruby-identifier">key_symbol</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key_symbols</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- keys_down-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- keys_down-3F-method -->
+
+    
+      <div id="method-c-offscreen-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">offscreen?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="offscreen-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">offscreen?</span>
+  <span class="ruby-keyword">not</span> <span class="ruby-identifier">onscreen?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- offscreen-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- offscreen-3F-method -->
+
+    
+      <div id="method-c-onscreen-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">onscreen?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="onscreen-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">onscreen?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">y</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">width</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">height</span>
+          <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- onscreen-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- onscreen-3F-method -->
+
+    
+      <div id="method-c-remove_listener" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_listener</span><span
+            class="method-args">(listener)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_listener-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_listener</span> <span class="ruby-identifier">listener</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">listener</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Method</span>
+    <span class="ruby-identifier">key_up_listener</span>   = <span class="ruby-identifier">@@key_up_listeners</span>.<span class="ruby-identifier">key</span>   <span class="ruby-identifier">listener</span>
+    <span class="ruby-identifier">key_down_listener</span> = <span class="ruby-identifier">@@key_down_listeners</span>.<span class="ruby-identifier">key</span> <span class="ruby-identifier">listener</span>
+    
+    <span class="ruby-identifier">@@key_up_listeners</span>.<span class="ruby-identifier">delete</span>   <span class="ruby-identifier">key_up_listener</span>
+    <span class="ruby-identifier">@@key_down_listeners</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">key_down_listener</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">@@key_down_listeners</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">listener</span>
+    <span class="ruby-identifier">@@key_up_listeners</span>.<span class="ruby-identifier">delete</span>   <span class="ruby-identifier">listener</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_listener-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_listener-method -->
+
+    
+      <div id="method-c-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>; <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">cursor_visible</span> = <span class="ruby-keyword">true</span>  <span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+      <div id="method-c-x" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">x</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="x-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">x</span>; <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">mouse_x</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- x-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- x-method -->
+
+    
+      <div id="method-c-x-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">x=</span><span
+            class="method-args">(value;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="x-3D-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">x=</span><span class="ruby-identifier">value</span>; <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">mouse_x</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- x-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- x-3D-method -->
+
+    
+      <div id="method-c-y" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">y</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="y-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">y</span>; <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">mouse_y</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- y-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- y-method -->
+
+    
+      <div id="method-c-y-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">y=</span><span
+            class="method-args">(value;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="y-3D-source">
+            <pre><span class="ruby-comment"># File lib/okami/mouse.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">y=</span><span class="ruby-identifier">value</span>; <span class="ruby-identifier">$window</span>.<span class="ruby-identifier">mouse_y</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- y-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- y-3D-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

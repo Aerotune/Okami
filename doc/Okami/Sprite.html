@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Okami::Sprite - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/okami/sprite.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-animation_finished-3F">#animation_finished?</a>
+    
+    <li><a href="#method-i-draw">#draw</a>
+    
+    <li><a href="#method-i-draw_as_quad">#draw_as_quad</a>
+    
+    <li><a href="#method-i-draw_rot">#draw_rot</a>
+    
+    <li><a href="#method-i-finished-3F">#finished?</a>
+    
+    <li><a href="#method-i-fps">#fps</a>
+    
+    <li><a href="#method-i-fps-3D">#fps=</a>
+    
+    <li><a href="#method-i-frame_index-3D">#frame_index=</a>
+    
+    <li><a href="#method-i-mode-3D">#mode=</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+    <li><a href="#method-i-update_backward">#update_backward</a>
+    
+    <li><a href="#method-i-update_backward_loop">#update_backward_loop</a>
+    
+    <li><a href="#method-i-update_current_image">#update_current_image</a>
+    
+    <li><a href="#method-i-update_forward">#update_forward</a>
+    
+    <li><a href="#method-i-update_loop">#update_loop</a>
+    
+    <li><a href="#method-i-update_ping_pong">#update_ping_pong</a>
+    
+    <li><a href="#method-i-use_update">#use_update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../readme_txt.html">readme</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Okami.html">Okami</a>
+  
+    <li><a href="../Okami/HitMask.html">Okami::HitMask</a>
+  
+    <li><a href="../Okami/Image.html">Okami::Image</a>
+  
+    <li><a href="../Okami/Keyboard.html">Okami::Keyboard</a>
+  
+    <li><a href="../Okami/Mouse.html">Okami::Mouse</a>
+  
+    <li><a href="../Okami/MouseTrap.html">Okami::MouseTrap</a>
+  
+    <li><a href="../Okami/Sprite.html">Okami::Sprite</a>
+  
+    <li><a href="../Okami/Window.html">Okami::Window</a>
+  
+    <li><a href="../OS.html">OS</a>
+  
+    <li><a href="../Window.html">Window</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Okami::Sprite</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="Modes">Modes
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-current_image" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current_image</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-frame_index" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">frame_index</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-images" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">images</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-last_frame_index" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">last_frame_index</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">mode</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">options</span>={}
+  <span class="ruby-ivar">@images</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:images</span>]
+  
+  <span class="ruby-ivar">@last_frame_index</span> = <span class="ruby-ivar">@images</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@add</span>      = ( <span class="ruby-identifier">options</span>[<span class="ruby-value">:fps</span>]  <span class="ruby-operator">||</span> <span class="ruby-value">0</span> ) <span class="ruby-operator">/</span> <span class="ruby-value">60.0</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mode</span> =   <span class="ruby-identifier">options</span>[<span class="ruby-value">:mode</span>] <span class="ruby-operator">||</span> <span class="ruby-value">:loop</span>
+  
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@direction</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:forward</span>  <span class="ruby-keyword">then</span> <span class="ruby-ivar">@frame_index</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:backward</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@frame_index</span> = <span class="ruby-ivar">@last_frame_index</span><span class="ruby-operator">+</span><span class="ruby-value">0.99</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">update_current_image</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-animation_finished-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">animation_finished?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Sprite.html#method-i-finished-3F">finished?</a>
+        </div>
+        
+      </div><!-- animation_finished-3F-method -->
+
+    
+      <div id="method-i-draw" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw</span><span
+            class="method-args">(*args;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Draw it just like a Gosu::Image !</p>
+          
+
+          
+          <div class="method-source-code" id="draw-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw</span>         *<span class="ruby-identifier">args</span>; <span class="ruby-ivar">@current_image</span>.<span class="ruby-identifier">draw</span>         *<span class="ruby-identifier">args</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- draw-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw-method -->
+
+    
+      <div id="method-i-draw_as_quad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_as_quad</span><span
+            class="method-args">(*args;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="draw_as_quad-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_as_quad</span> *<span class="ruby-identifier">args</span>; <span class="ruby-ivar">@current_image</span>.<span class="ruby-identifier">draw_as_quad</span> *<span class="ruby-identifier">args</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_as_quad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_as_quad-method -->
+
+    
+      <div id="method-i-draw_rot" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_rot</span><span
+            class="method-args">(*args;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="draw_rot-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_rot</span>     *<span class="ruby-identifier">args</span>; <span class="ruby-ivar">@current_image</span>.<span class="ruby-identifier">draw_rot</span>     *<span class="ruby-identifier">args</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_rot-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_rot-method -->
+
+    
+      <div id="method-i-finished-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finished?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="finished-3F-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finished?</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@mode</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:forward</span>;  <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@last_frame_index</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:backward</span>; <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finished-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Sprite.html#method-i-animation_finished-3F">animation_finished?</a>
+        </div>
+        
+
+        
+      </div><!-- finished-3F-method -->
+
+    
+      <div id="method-i-fps" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fps</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fps-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fps</span>; <span class="ruby-ivar">@add</span> * <span class="ruby-value">60</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- fps-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fps-method -->
+
+    
+      <div id="method-i-fps-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fps=</span><span
+            class="method-args">(fps;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fps-3D-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fps=</span> <span class="ruby-identifier">fps</span>; <span class="ruby-ivar">@add</span> = <span class="ruby-identifier">fps</span> <span class="ruby-operator">/</span> <span class="ruby-value">60.0</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- fps-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fps-3D-method -->
+
+    
+      <div id="method-i-frame_index-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">frame_index=</span><span
+            class="method-args">(i)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="frame_index-3D-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frame_index=</span> <span class="ruby-identifier">i</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-identifier">i</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-ivar">@last_frame_index</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@last_frame_index</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">update_current_image</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- frame_index-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- frame_index-3D-method -->
+
+    
+      <div id="method-i-mode-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mode=</span><span
+            class="method-args">(symbol)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mode-3D-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mode=</span> <span class="ruby-identifier">symbol</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">symbol</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:loop</span>
+    <span class="ruby-ivar">@direction</span> = <span class="ruby-value">:forward</span>
+    <span class="ruby-identifier">use_update</span> <span class="ruby-identifier">method</span> <span class="ruby-value">:update_loop</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:backward_loop</span>
+    <span class="ruby-ivar">@direction</span> = <span class="ruby-value">:backward</span>
+    <span class="ruby-identifier">use_update</span> <span class="ruby-identifier">method</span> <span class="ruby-value">:update_backward_loop</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:forward</span>
+    <span class="ruby-ivar">@direction</span> = <span class="ruby-value">:forward</span>
+    <span class="ruby-identifier">use_update</span> <span class="ruby-identifier">method</span> <span class="ruby-value">:update_forward</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:backward</span>
+    <span class="ruby-ivar">@direction</span> = <span class="ruby-value">:backward</span>
+    <span class="ruby-identifier">use_update</span> <span class="ruby-identifier">method</span> <span class="ruby-value">:update_backward</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:ping_pong</span>
+    <span class="ruby-ivar">@direction</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:forward</span>
+    <span class="ruby-identifier">use_update</span> <span class="ruby-identifier">method</span> <span class="ruby-value">:update_ping_pong</span>
+    
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Supported AnimatedSprite modes:&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">modes</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;AnimatedSprite, mode #{symbol.inspect} not supported&quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-ivar">@mode</span> = <span class="ruby-identifier">symbol</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mode-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mode-3D-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@direction</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:forward</span>  <span class="ruby-keyword">then</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@add</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:backward</span> <span class="ruby-keyword">then</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">-=</span> <span class="ruby-ivar">@add</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-ivar">@update_method</span>.<span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">update_current_image</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-update_backward" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_backward</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_backward-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_backward</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_backward-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_backward-method -->
+
+    
+      <div id="method-i-update_backward_loop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_backward_loop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_backward_loop-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_backward_loop</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-ivar">@last_frame_index</span><span class="ruby-operator">+</span><span class="ruby-value">0.99</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_backward_loop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_backward_loop-method -->
+
+    
+      <div id="method-i-update_current_image" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_current_image</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_current_image-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_current_image</span>
+  <span class="ruby-ivar">@current_image</span> = <span class="ruby-ivar">@images</span>[ <span class="ruby-ivar">@frame_index</span> ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_current_image-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_current_image-method -->
+
+    
+      <div id="method-i-update_forward" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_forward</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_forward-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_forward</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-ivar">@last_frame_index</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@last_frame_index</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_forward-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_forward-method -->
+
+    
+      <div id="method-i-update_loop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_loop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_loop-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_loop</span>
+  <span class="ruby-ivar">@frame_index</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@last_frame_index</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_loop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_loop-method -->
+
+    
+      <div id="method-i-update_ping_pong" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_ping_pong</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_ping_pong-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_ping_pong</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@direction</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:forward</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@last_frame_index</span>
+      <span class="ruby-ivar">@direction</span> = <span class="ruby-value">:backward</span>
+      <span class="ruby-ivar">@frame_index</span> = <span class="ruby-ivar">@last_frame_index</span>
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:backward</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame_index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@frame_index</span> = <span class="ruby-value">1</span>
+      <span class="ruby-ivar">@direction</span> = <span class="ruby-value">:forward</span>
+    <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_ping_pong-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_ping_pong-method -->
+
+    
+      <div id="method-i-use_update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">use_update</span><span
+            class="method-args">(method;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="use_update-source">
+            <pre><span class="ruby-comment"># File lib/okami/sprite.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">use_update</span> <span class="ruby-identifier">method</span>; <span class="ruby-ivar">@update_method</span> = <span class="ruby-identifier">method</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- use_update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- use_update-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
