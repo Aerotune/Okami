@@ -105,8 +105,8 @@ module Okami::Keyboard
     
     def remove_key_down_listener listener
       if listener.class == Method
-        key_down_listener = @@key_down_listeners.key listener
-        @@key_down_listeners.delete key_down_listener
+        puts "Class method!"
+        @@key_down_listeners.delete @@key_down_listeners.key(listener)
       else
         @@key_down_listeners.delete listener
       end
