@@ -49,17 +49,19 @@ module Okami::Mouse
       @@key_up_listeners[ listener_method.receiver ] = listener_method
     end
   
-    def remove_listener listener
-      case listener.class
-      when Method
-        key_up_listener   = @@key_up_listeners.key   listener
-        key_down_listener = @@key_down_listeners.key listener
-        
-        @@key_up_listeners.delete   key_up_listener
-        @@key_down_listeners.delete key_down_listener
+    def remove_key_up_listener listener
+      if listener.class == Method
+        @@key_up_listeners.delete @@key_up_listeners.key(listener)
+      else
+        @@key_up_listeners.delete listener
+      end
+    end
+    
+    def remove_key_down_listener listener
+      if listener.class == Method
+        @@key_down_listeners.delete @@key_down_listeners.key(listener)
       else
         @@key_down_listeners.delete listener
-        @@key_up_listeners.delete   listener
       end
     end
   
