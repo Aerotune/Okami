@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>examples/open_window.rb
+    <li>examples/input.rb
   </ul>
 </nav>
 
@@ -73,6 +73,12 @@
     <li><a href="#method-c-new">::new</a>
     
     <li><a href="#method-i-draw">#draw</a>
+    
+    <li><a href="#method-i-key_down">#key_down</a>
+    
+    <li><a href="#method-i-mouse_down">#mouse_down</a>
+    
+    <li><a href="#method-i-mouse_up">#mouse_up</a>
     
     <li><a href="#method-i-update">#update</a>
     
@@ -164,9 +170,12 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File examples/open_window.rb, line 5</span>
+            <pre><span class="ruby-comment"># File examples/input.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-keyword">super</span> <span class="ruby-value">800</span>, <span class="ruby-value">600</span>, <span class="ruby-keyword">false</span>
+  <span class="ruby-constant">Mouse</span>.<span class="ruby-identifier">add_key_down_listener</span> <span class="ruby-identifier">method</span>(<span class="ruby-value">:mouse_down</span>)
+  <span class="ruby-constant">Mouse</span>.<span class="ruby-identifier">add_key_up_listener</span> <span class="ruby-identifier">method</span>(<span class="ruby-value">:mouse_up</span>)
+  <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">add_key_down_listener</span> <span class="ruby-identifier">method</span>(<span class="ruby-value">:key_down</span>)
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
           
@@ -200,7 +209,7 @@
 
           
           <div class="method-source-code" id="draw-source">
-            <pre><span class="ruby-comment"># File examples/open_window.rb, line 13</span>
+            <pre><span class="ruby-comment"># File examples/input.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">draw</span>
   
 <span class="ruby-keyword">end</span></pre>
@@ -212,6 +221,116 @@
 
         
       </div><!-- draw-method -->
+
+    
+      <div id="method-i-key_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_down</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key_down-source">
+            <pre><span class="ruby-comment"># File examples/input.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key_down</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Key down: #{key}!&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-value">:q</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Stopped listening for key down!&quot;</span>
+    <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">remove_key_down_listener</span> <span class="ruby-identifier">method</span>(<span class="ruby-value">:key_down</span>)
+    <span class="ruby-comment"># or</span>
+    <span class="ruby-comment">#Keyboard.remove_key_down_listener self if key == :q</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key_down-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key_down-method -->
+
+    
+      <div id="method-i-mouse_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mouse_down</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mouse_down-source">
+            <pre><span class="ruby-comment"># File examples/input.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mouse_down</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:left</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Left mouse button pressed!&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:right</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Right mouse button pressed!&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:middle</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Middle mouse button pressed!&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mouse_down-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mouse_down-method -->
+
+    
+      <div id="method-i-mouse_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mouse_up</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mouse_up-source">
+            <pre><span class="ruby-comment"># File examples/input.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mouse_up</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:left</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Left mouse button released!&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:right</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Right mouse button released!&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:middle</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Middle mouse button released!&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mouse_up-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mouse_up-method -->
 
     
       <div id="method-i-update" class="method-detail ">
@@ -230,9 +349,18 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File examples/open_window.rb, line 9</span>
+            <pre><span class="ruby-comment"># File examples/input.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@dt</span>
+  <span class="ruby-comment">## Use this to get the delta time in seconds between each frame</span>
+  <span class="ruby-comment">#puts @dt</span>
+  
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;W down!&quot;</span>  <span class="ruby-keyword">if</span> <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">key_down?</span> <span class="ruby-value">:w</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;S down!&quot;</span>      <span class="ruby-keyword">if</span> <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">key_down?</span>   <span class="ruby-value">:s</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Command key down!&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">key_down?</span> <span class="ruby-value">:cmd</span>
+  
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Arrow key pressed down!&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">any_key_down?</span> <span class="ruby-value">:left</span>, <span class="ruby-value">:right</span>, <span class="ruby-value">:up</span>, <span class="ruby-value">:down</span>
+  
+  <span class="ruby-comment">#puts &quot;Left mouse button released!&quot; if Mouse.key_up? :left</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- update-source -->
           
