@@ -1,0 +1,9 @@
+lib/okami.rb f00965f577dd8033ab2448d30399b841b7f2ecf7
+lib/okami/os.rb 892a3e1b1b15f2c979fbe1c1e3be5ff468826df8
+lib/okami/image.rb 7de5da74a359419bdb11e1a3022233b3fcfeb39d
+lib/okami/mouse.rb 6f1f3b0461fbe49b9dc92dba55975022431388ea
+lib/okami/window.rb 107f0e9e170427c98f61358526e4254cc9febdf6
+lib/okami/sprite.rb 845da3b8f2aa37cf8db680a8a1e8fb0e9809b629
+lib/okami/keyboard.rb 5d9da408e59bd6c0a74c2ddad57c6dfd74270469
+lib/okami/hit_mask.rb cc32c91a3f3468cdb306601c6a54eee76ffdf0c3
+lib/okami/mouse_trap.rb d7a5866d81d44a5bb4f78c053f63f329c6b37ff6

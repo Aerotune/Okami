@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'okami'
-  s.version     = '0.0.4'
+  s.version     = '0.0.5'
   s.date        = '2013-03-12'
   s.summary     = "Okami minimal Gosu!"
   s.description = "Gosu Interface with fancy functionality for simplicity."

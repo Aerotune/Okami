@@ -1,297 +1,435 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Okami::HitMask
+  
+    &mdash; Documentation by YARD 0.8.5.2
+  
+</title>
 
-<html>
-<head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
 
-<title>class Okami::HitMask - RDoc Documentation</title>
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
 
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
-
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../";
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
-    <a href="../table_of_contents.html#classes">Classes</a>
-    <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Okami.html" title="Okami (module)">Okami</a></span></span>
+     &raquo; 
+    <span class="title">HitMask</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Okami::HitMask
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Okami::HitMask</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/okami/hit_mask.rb</dd>
+  
+</dl>
+<div class="clear"></div>
 
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
 
 
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/okami/hit_mask.rb
-  </ul>
-</nav>
 
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hit_line-instance_method" title="#hit_line (instance method)">- (Object) <strong>hit_line</strong>(x1, y1, x2, y2) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns an array with the coordinates of the first hit point [x,y] or nil
+if it doesn&#8217;t hit.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hit_line%3F-instance_method" title="#hit_line? (instance method)">- (Boolean) <strong>hit_line?</strong>(x1, y1, x2, y2) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hit_point%3F-instance_method" title="#hit_point? (instance method)">- (Boolean) <strong>hit_point?</strong>(x, y) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (HitMask) <strong>initialize</strong>(mask, parent) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+The mask is of the type Image, white is hitpoints, black is not.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Okami::HitMask (class)">HitMask</a></span></tt>) <strong>initialize</strong>(mask, parent) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+The mask is of the type Image, white is hitpoints, black is not
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7
+8</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/okami/hit_mask.rb', line 5</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='id identifier rubyid_mask'>mask</span><span class='comma'>,</span> <span class='id identifier rubyid_parent'>parent</span>
+  <span class='ivar'>@hit_mask</span> <span class='op'>=</span> <span class='id identifier rubyid_mask'>mask</span>
+  <span class='ivar'>@parent</span> <span class='op'>=</span> <span class='id identifier rubyid_parent'>parent</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="hit_line-instance_method">
+  
+    - (<tt>Object</tt>) <strong>hit_line</strong>(x1, y1, x2, y2) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns an array with the coordinates of the first hit point [x,y] or nil
+if it doesn&#8217;t hit
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/okami/hit_mask.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hit_line'>hit_line</span> <span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span>
+  <span class='id identifier rubyid_hit_vertex'>hit_vertex</span> <span class='op'>=</span> <span class='ivar'>@hit_mask</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span> <span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='comma'>,</span> <span class='label'>trace:</span> <span class='lbrace'>{</span> <span class='symbol'>:until_color</span> <span class='op'>=&gt;</span> <span class='symbol'>:white</span><span class='comma'>,</span> <span class='symbol'>:tolerance</span> <span class='op'>=&gt;</span> <span class='float'>0.1</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_hit_vertex'>hit_vertex</span> <span class='op'>?</span> <span class='id identifier rubyid_hit_vertex'>hit_vertex</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hit_line?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>hit_line?</strong>(x1, y1, x2, y2) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/okami/hit_mask.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hit_line?'>hit_line?</span> <span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span>
+  <span class='op'>!</span><span class='op'>!</span><span class='id identifier rubyid_hit_line'>hit_line</span><span class='lparen'>(</span> <span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span> <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hit_point?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>hit_point?</strong>(x, y) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/okami/hit_mask.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hit_point?'>hit_point?</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span>
+  <span class='id identifier rubyid_c'>c</span> <span class='op'>=</span> <span class='ivar'>@hit_mask</span><span class='period'>.</span><span class='id identifier rubyid_get_pixel'>get_pixel</span><span class='lparen'>(</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='ivar'>@parent</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='ivar'>@parent</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_c'>c</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='float'>0.9</span> <span class='comment'># quick 'n dirty
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
     
   </div>
 
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">Object
-  
-</nav>
+</div>
 
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+    <div id="footer">
+  Generated on Wed Mar 13 15:41:40 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.5.2 (ruby-1.9.2).
+</div>
 
-  <ul class="link-list">
-    
-    <li><a href="#method-c-new">::new</a>
-    
-    <li><a href="#method-i-hit_line">#hit_line</a>
-    
-    <li><a href="#method-i-hit_line-3F">#hit_line?</a>
-    
-    <li><a href="#method-i-hit_point-3F">#hit_point?</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../readme_txt.html">readme</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../Okami.html">Okami</a>
-  
-    <li><a href="../Okami/HitMask.html">Okami::HitMask</a>
-  
-    <li><a href="../Okami/Image.html">Okami::Image</a>
-  
-    <li><a href="../Okami/Keyboard.html">Okami::Keyboard</a>
-  
-    <li><a href="../Okami/Mouse.html">Okami::Mouse</a>
-  
-    <li><a href="../Okami/MouseTrap.html">Okami::MouseTrap</a>
-  
-    <li><a href="../Okami/Sprite.html">Okami::Sprite</a>
-  
-    <li><a href="../Okami/Window.html">Okami::Window</a>
-  
-    <li><a href="../OS.html">OS</a>
-  
-    <li><a href="../Window.html">Window</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class Okami::HitMask</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
-
-    
-      <div id="method-c-new" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">new</span><span
-            class="method-args">(mask, parent)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>The mask is of the type <a href="Image.html">Image</a>, white is hitpoints,
-black is not</p>
-          
-
-          
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/okami/hit_mask.rb, line 5</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">mask</span>, <span class="ruby-identifier">parent</span>
-  <span class="ruby-ivar">@hit_mask</span> = <span class="ruby-identifier">mask</span>
-  <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- new-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- new-method -->
-
-    
-    </section><!-- public-class-method-details -->
-  
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-hit_line" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">hit_line</span><span
-            class="method-args">(x1, y1, x2, y2)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Returns an array with the coordinates of the first hit point [x,y] or nil
-if it doesn’t hit</p>
-          
-
-          
-          <div class="method-source-code" id="hit_line-source">
-            <pre><span class="ruby-comment"># File lib/okami/hit_mask.rb, line 21</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">hit_line</span> <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">x2</span>, <span class="ruby-identifier">y2</span>
-  <span class="ruby-identifier">hit_vertex</span> = <span class="ruby-ivar">@hit_mask</span>.<span class="ruby-identifier">line</span> <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">x2</span>, <span class="ruby-identifier">y2</span>, <span class="ruby-identifier">trace</span><span class="ruby-operator">:</span> { <span class="ruby-value">:until_color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:white</span>, <span class="ruby-value">:tolerance</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0.1</span> }
-  <span class="ruby-identifier">hit_vertex</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">hit_vertex</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- hit_line-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- hit_line-method -->
-
-    
-      <div id="method-i-hit_line-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">hit_line?</span><span
-            class="method-args">(x1, y1, x2, y2)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="hit_line-3F-source">
-            <pre><span class="ruby-comment"># File lib/okami/hit_mask.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">hit_line?</span> <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">x2</span>, <span class="ruby-identifier">y2</span>
-  <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">hit_line</span>( <span class="ruby-identifier">x1</span>, <span class="ruby-identifier">y1</span>, <span class="ruby-identifier">x2</span>, <span class="ruby-identifier">y2</span> )
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- hit_line-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- hit_line-3F-method -->
-
-    
-      <div id="method-i-hit_point-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">hit_point?</span><span
-            class="method-args">(x, y)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-
-          
-          <div class="method-source-code" id="hit_point-3F-source">
-            <pre><span class="ruby-comment"># File lib/okami/hit_mask.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">hit_point?</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
-  <span class="ruby-identifier">c</span> = <span class="ruby-ivar">@hit_mask</span>.<span class="ruby-identifier">get_pixel</span>( <span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@parent</span>.<span class="ruby-identifier">y</span> )
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">c</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">c</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.9</span> <span class="ruby-comment"># quick 'n dirty</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- hit_point-3F-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- hit_point-3F-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
-
-</div><!-- documentation -->
-
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
-
+  </body>
+</html>
