@@ -1,5 +1,3 @@
-require 'texplay'
-
 class Okami::HitMask
   ## The mask is of the type Image, white is hitpoints, black is not
   def initialize mask, parent
