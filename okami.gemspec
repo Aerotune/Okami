@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'okami'
-  s.version     = '0.0.5'
+  s.version     = '0.0.8'
   s.date        = '2013-03-12'
   s.summary     = "Okami minimal Gosu!"
   s.description = "Gosu Interface with fancy functionality for simplicity."
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
                    
   s.homepage    = 'https://github.com/Aerotune/Okami'
   s.add_runtime_dependency 'gosu'
-  s.requirements << "To use Okami::HitMask you need to have the 'texplay' gem installed"
+  s.add_runtime_dependency 'texplay'
 end

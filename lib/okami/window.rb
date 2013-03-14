@@ -1,7 +1,4 @@
 module Okami
-  def self.method_missing *args; Gosu.send *args      end
-  def self.const_missing const;  Gosu.const_get const end
-  
   class Window < Gosu::Window
     include Gosu
     include Okami
@@ -25,10 +22,18 @@ module Okami
       Okami::Keyboard.button_up id
       Okami::Mouse.button_up id
     end
-  
-    def retrofy
-      Gosu::enable_undocumented_retrofication \
-      rescue puts "Unable to use Gosu::enable_undocumented_retrofication"
+    
+    def fill color, z=0
+      color = case color
+      when :white then 0xFFFFFFFF
+      when :black then 0xFF000000
+      end
+      
+      draw_quad 0,      0,      color,
+                width,  0,      color,
+                0,      height, color,
+                width,  height, color,
+                z, mode = :default
     end
     
     def calculate_dt

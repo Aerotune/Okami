@@ -253,6 +253,28 @@ Returns the value of attribute cursor_visible.
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#fill-instance_method" title="#fill (instance method)">- (Object) <strong>fill</strong>(color, z = 0) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#hide_cursor-instance_method" title="#hide_cursor (instance method)">- (Object) <strong>hide_cursor</strong> </a>
     
 
@@ -324,28 +346,6 @@ A new instance of Window.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#retrofy-instance_method" title="#retrofy (instance method)">- (Object) <strong>retrofy</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#show_cursor-instance_method" title="#show_cursor (instance method)">- (Object) <strong>show_cursor</strong> </a>
     
 
@@ -375,11 +375,6 @@ A new instance of Window.
   
   
   
-  
-  
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="../Okami.html" title="Okami (module)">Okami</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Okami.html#const_missing-class_method" title="Okami.const_missing (method)">const_missing</a></span>, <span class='object_link'><a href="../Okami.html#method_missing-class_method" title="Okami.method_missing (method)">method_missing</a></span></p>
-
   
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
@@ -411,13 +406,13 @@ A new instance of Window
       <pre class="lines">
 
 
-10
-11
-12
-13</pre>
+7
+8
+9
+10</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span>
   <span class='ivar'>@prev_t</span> <span class='op'>=</span> <span class='const'>Gosu</span><span class='op'>::</span><span class='id identifier rubyid_milliseconds'>milliseconds</span>
@@ -462,12 +457,12 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-8
-9
-10</pre>
+5
+6
+7</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cursor_visible'>cursor_visible</span>
   <span class='ivar'>@cursor_visible</span>
@@ -499,19 +494,19 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-40
-41
-42
-43
-44
 45
 46
 47
 48
-49</pre>
+49
+50
+51
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inherited'>inherited</span><span class='lparen'>(</span><span class='id identifier rubyid_subclass'>subclass</span><span class='rparen'>)</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_subclass'>subclass</span><span class='period'>.</span><span class='id identifier rubyid_method_added'>method_added</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -549,13 +544,13 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-19
-20
-21
-22</pre>
+16
+17
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_button_down'>button_down</span> <span class='id identifier rubyid_id'>id</span>
   <span class='const'>Okami</span><span class='op'>::</span><span class='const'>Keyboard</span><span class='period'>.</span><span class='id identifier rubyid_button_down'>button_down</span> <span class='id identifier rubyid_id'>id</span>
@@ -581,13 +576,13 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-24
-25
-26
-27</pre>
+21
+22
+23
+24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_button_up'>button_up</span> <span class='id identifier rubyid_id'>id</span>
   <span class='const'>Okami</span><span class='op'>::</span><span class='const'>Keyboard</span><span class='period'>.</span><span class='id identifier rubyid_button_up'>button_up</span> <span class='id identifier rubyid_id'>id</span>
@@ -613,19 +608,67 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-34
-35
-36
-37
-38</pre>
+39
+40
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calculate_dt'>calculate_dt</span>
   <span class='ivar'>@t</span>       <span class='op'>=</span> <span class='const'>Gosu</span><span class='op'>::</span><span class='id identifier rubyid_milliseconds'>milliseconds</span>
   <span class='ivar'>@dt</span>      <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@t</span><span class='op'>-</span><span class='ivar'>@prev_t</span><span class='rparen'>)</span><span class='op'>/</span><span class='float'>1000.0</span>
   <span class='ivar'>@prev_t</span>  <span class='op'>=</span> <span class='ivar'>@t</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fill-instance_method">
+  
+    - (<tt>Object</tt>) <strong>fill</strong>(color, z = 0) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fill'>fill</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span> <span class='id identifier rubyid_z'>z</span><span class='op'>=</span><span class='int'>0</span>
+  <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_color'>color</span>
+  <span class='kw'>when</span> <span class='symbol'>:white</span> <span class='kw'>then</span> <span class='int'>0xFFFFFFFF</span>
+  <span class='kw'>when</span> <span class='symbol'>:black</span> <span class='kw'>then</span> <span class='int'>0xFF000000</span>
+  <span class='kw'>end</span>
+  
+  <span class='id identifier rubyid_draw_quad'>draw_quad</span> <span class='int'>0</span><span class='comma'>,</span>      <span class='int'>0</span><span class='comma'>,</span>      <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span>
+            <span class='id identifier rubyid_width'>width</span><span class='comma'>,</span>  <span class='int'>0</span><span class='comma'>,</span>      <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span>
+            <span class='int'>0</span><span class='comma'>,</span>      <span class='id identifier rubyid_height'>height</span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span>
+            <span class='id identifier rubyid_width'>width</span><span class='comma'>,</span>  <span class='id identifier rubyid_height'>height</span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='comma'>,</span>
+            <span class='id identifier rubyid_z'>z</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>=</span> <span class='symbol'>:default</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -647,10 +690,10 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-16</pre>
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hide_cursor'>hide_cursor</span><span class='semicolon'>;</span>   <span class='ivar'>@cursor_visible</span> <span class='op'>=</span> <span class='kw'>false</span> <span class='kw'>end</span></pre>
     </td>
@@ -695,44 +738,12 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-17</pre>
+14</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_needs_cursor?'>needs_cursor?</span><span class='semicolon'>;</span> <span class='ivar'>@cursor_visible</span>         <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="retrofy-instance_method">
-  
-    - (<tt>Object</tt>) <strong>retrofy</strong> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-29
-30
-31
-32</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 29</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_retrofy'>retrofy</span>
-  <span class='const'>Gosu</span><span class='op'>::</span><span class='id identifier rubyid_enable_undocumented_retrofication'>enable_undocumented_retrofication</span> \
-  <span class='kw'>rescue</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unable to use Gosu::enable_undocumented_retrofication</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -753,10 +764,10 @@ Returns the value of attribute cursor_visible
       <pre class="lines">
 
 
-15</pre>
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 12</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_cursor'>show_cursor</span><span class='semicolon'>;</span>   <span class='ivar'>@cursor_visible</span> <span class='op'>=</span> <span class='kw'>true</span>  <span class='kw'>end</span></pre>
     </td>
@@ -769,7 +780,7 @@ Returns the value of attribute cursor_visible
 </div>
 
     <div id="footer">
-  Generated on Wed Mar 13 15:41:40 2013 by
+  Generated on Thu Mar 14 21:39:54 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.5.2 (ruby-1.9.2).
 </div>

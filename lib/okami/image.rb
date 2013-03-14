@@ -28,6 +28,11 @@ class Okami::Image < Gosu::Image
     def require_tiles path, tile_width, tile_height, tileable=@tileable
       ImageTiles[ "size:#{tile_width},#{tile_height}&" + @load_path + path ] ||= load_tiles path, tile_width, tile_height, tileable
     end
+    
+    def retrofy
+      Gosu::enable_undocumented_retrofication \
+      rescue puts "Unable to use Gosu::enable_undocumented_retrofication"
+    end
       
   end
 end

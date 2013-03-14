@@ -109,125 +109,12 @@
 
 
 
-  
-    <h2>
-      Class Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
 
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#const_missing-class_method" title="const_missing (class method)">+ (Object) <strong>const_missing</strong>(const) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#method_missing-class_method" title="method_missing (class method)">+ (Object) <strong>method_missing</strong>(*args) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-    </ul>
-  
-
-
-
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="const_missing-class_method">
-  
-    + (<tt>Object</tt>) <strong>const_missing</strong>(const) 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-3</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 3</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_const_missing'>const_missing</span> <span class='id identifier rubyid_const'>const</span><span class='semicolon'>;</span>  <span class='const'>Gosu</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span> <span class='id identifier rubyid_const'>const</span> <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="method_missing-class_method">
-  
-    + (<tt>Object</tt>) <strong>method_missing</strong>(*args) 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-2</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/okami/window.rb', line 2</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_method_missing'>method_missing</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='semicolon'>;</span> <span class='const'>Gosu</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span>      <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
 
 </div>
 
     <div id="footer">
-  Generated on Wed Mar 13 15:41:40 2013 by
+  Generated on Thu Mar 14 21:39:54 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.5.2 (ruby-1.9.2).
 </div>
