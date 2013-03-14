@@ -14,8 +14,9 @@ class Okami::Image < Gosu::Image
     def new path, tileable=@tileable, *src_rect
       super $window, @load_path + path, tileable, *src_rect
     end
+    alias load new
 
-    def new_tiles path, tile_width, tile_height, tileable=@tileable             
+    def load_tiles path, tile_width, tile_height, tileable=@tileable             
       super $window, @load_path + path, tile_width, tile_height, tileable
     end
   
