@@ -1,4 +1,4 @@
-require_relative '../lib/okami'
+require 'okami'
 
 Keyboard = Okami::Keyboard
 Mouse = Okami::Mouse
@@ -60,8 +60,8 @@ class GameWindow < Okami::Window
     puts "Key up   #{key.inspect}"
   end
   
-  def mouse_down key; puts "Mouse down #{key}" end
-  def mouse_up key;   puts "Mouse up   #{key}" end
+  def mouse_down key; puts "Mouse down #{key.inspect}" end
+  def mouse_up key;   puts "Mouse up   #{key.inspect}" end
   
   def update
     ## @dt, the delta time from last update in seconds. It's calculated before each update call.
