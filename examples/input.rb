@@ -12,7 +12,7 @@ class Window < Okami::Window
   def update
     ## Use this to get the delta time in seconds between each frame
     #puts @dt
-    
+    p $window.current_time
     puts "W down!"  if Keyboard.key_down? :w
     puts "S down!"      if Keyboard.key_down?   :s
     puts "Command key down!" if Keyboard.key_down? :cmd

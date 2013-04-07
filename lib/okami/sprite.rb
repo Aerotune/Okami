@@ -3,32 +3,26 @@ class Okami::Sprite
 
   attr_reader :current_image, :images, :last_frame_index
   
-  def initialize options={}
+  def initialize options
+    raise_possible_errors options
+    
     @images = options[:images]
     
     @last_frame_index = @images.length - 1
-    @add      = ( options[:fps]  || 0 ) / 60.0
-    self.mode =   options[:mode] || :loop
+    @add       = ( options[:fps]  || 0 ) / 60.0
+    @direction =   options[:direction]
+    self.mode  =   options[:mode] || :loop
     
     case @direction
     when :forward  then @frame_index = 0
-    when :backward then @frame_index = @last_frame_index+0.99
+    when :backward then @frame_index = @last_frame_index+0.999
     end
     
     update_current_image
   end
   
-  def fps; @add * 60 end
+  def fps; @add * 60.0 end
   def fps= fps; @add = fps / 60.0 end
-  
-  attr_reader :frame_index
-  def frame_index= i
-    @frame_index = i
-    @frame_index = @last_frame_index if @frame_index > @last_frame_index
-    @frame_index = 0 if @frame_index < 0
-    update_current_image
-  end
-  
   
 	## Draw it just like a Gosu::Image !
   def draw         *args; @current_image.draw         *args end
@@ -38,8 +32,8 @@ class Okami::Sprite
   
   def update
     case @direction
-    when :forward  then @frame_index += @add
-    when :backward then @frame_index -= @add
+    when :forward  then @frame_index += @add*$window.dt*60.0
+    when :backward then @frame_index -= @add*$window.dt*60.0
     end
     
     @update_method.call
@@ -87,33 +81,39 @@ class Okami::Sprite
     @mode = symbol
   end
   
+  attr_reader :frame_index
+  def frame_index= i
+    @frame_index = i
+    @frame_index = @last_frame_index if @frame_index.abs > @last_frame_index
+    @frame_index = 0 if @frame_index < 0
+    update_current_image
+  end
+  
+  def random_frame_index
+    (rand()*@images.length)
+  end
   
   
-  protected
+  
+  private
   
   
   
   def use_update method; @update_method = method end
+  def update_current_image; @current_image = @images[@frame_index] end
+    
+  def update_loop;          @frame_index %= @images.length  end
+  def update_backward_loop; @frame_index %= @images.length  end
   
-  def update_current_image
-    @current_image = @images[ @frame_index ]
+  def update_backward
+    @frame_index = 0 if @frame_index < 0
   end
   
   def update_forward
     @frame_index = @last_frame_index if @frame_index > @last_frame_index
   end
   
-  def update_loop
-    @frame_index = 0 if @frame_index >= @last_frame_index
-  end
   
-  def update_backward
-    @frame_index = 0 if @frame_index < 0
-  end
-  
-  def update_backward_loop
-    @frame_index = @last_frame_index+0.99 if @frame_index < 0
-  end
   
   def update_ping_pong
     case @direction
@@ -125,26 +125,19 @@ class Okami::Sprite
       
     when :backward
       if @frame_index < 0
-        @frame_index = 1
+        @frame_index = 0
         @direction = :forward
       end
       
     end
   end
+  
+  def raise_possible_errors options
+    raise ArgumentError, "Sprite.new options must contain option :images" unless options[:images]
+    raise TypeError, "Sprite.new option :images must be of type Array"    unless options[:images].kind_of? Array
+    raise "Sprite.new option :images is empty"                            if options[:images].empty?
+    
+    raise ArgumentError, "Sprite.new options must contain option :fps"    unless options[:fps]
+    raise TypeError, "Sprite.new option :fps must be of type Numeric"     unless options[:fps].kind_of? Numeric
+  end
 end # Okami::Sprite
-
-=begin
-## Example ##
-a = AnimatedSprite.new images: [1, 2, 3, 4, 5, 6, 7, 8], fps: 60, :mode => :forward
-loop do
-  #if rand(10) == 1
-  #  modes = AnimatedSprite.modes
-  #  a.mode = modes[rand(modes.length)]
-  #  puts a.mode
-  #end
-  p a.current_image
-  p a.finished?
-  a.update
-  sleep 0.3
-end
-=end

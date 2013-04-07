@@ -1,7 +1,7 @@
 class Okami::HitMask
-  ## The mask is of the type Image, white is hitpoints, black is not
-  def initialize mask, parent
-    @hit_mask = mask
+  ## white is hitpoints, black is not
+  def initialize image, parent
+    @hit_mask = image
     @parent = parent
   end
   

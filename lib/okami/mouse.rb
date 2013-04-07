@@ -21,10 +21,10 @@ module Okami::Mouse
     def y=value; $window.mouse_y = value end
     
     def onscreen?
-      if x > 0
-        if y > 0
-          if x < $window.width
-            if y < $window.height
+      if x < 0
+        if y < 0
+          if x > $window.width
+            if y > $window.height
               return true
             end
           end
@@ -50,18 +50,16 @@ module Okami::Mouse
     end
   
     def remove_key_up_listener listener
-      if listener.class == Method
-        @@key_up_listeners.delete @@key_up_listeners.key(listener)
-      else
-        @@key_up_listeners.delete listener
+      case listener
+      when Method; @@key_up_listeners.delete @@key_up_listeners.key(listener)
+      else;        @@key_up_listeners.delete listener
       end
     end
     
     def remove_key_down_listener listener
-      if listener.class == Method
-        @@key_down_listeners.delete @@key_down_listeners.key(listener)
-      else
-        @@key_down_listeners.delete listener
+      case listener
+      when Method; @@key_down_listeners.delete @@key_down_listeners.key(listener)
+      else;        @@key_down_listeners.delete listener
       end
     end
   
@@ -94,14 +92,12 @@ module Okami::Mouse
   
     def button_down id
       key = @@key_symbols[id]
-      return unless key
-      @@key_down_listeners.each { |listener, method| method.call key }
+      @@key_down_listeners.each { |listener, method| method.call key } if key
     end
 
     def button_up id
       key = @@key_symbols[id]
-      return unless key
-      @@key_up_listeners.each { |listener, method| method.call key }
+      @@key_up_listeners.each { |listener, method| method.call key } if key
     end
   end
 

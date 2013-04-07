@@ -1,11 +1,9 @@
 module Okami
   class Window < Gosu::Window
-    include Gosu
-    include Okami
+    attr_reader :dt, :current_time
     attr_accessor :cursor_visible
     
     def initialize *args
-      @prev_t = Gosu::milliseconds
       $window = super *args
     end
   
@@ -23,10 +21,14 @@ module Okami
       Okami::Mouse.button_up id
     end
     
-    def fill color, z=0
+    def color_fill color, z=0
       color = case color
       when :white then 0xFFFFFFFF
       when :black then 0xFF000000
+      when Symbol
+        raise ArgumentError, "Unknown color #{color.inspect}"
+      else
+        color
       end
       
       draw_quad 0,      0,      color,
@@ -37,15 +39,18 @@ module Okami
     end
     
     def calculate_dt
-      @t       = Gosu::milliseconds
-      @dt      = (@t-@prev_t)/1000.0
-      @prev_t  = @t
+      @current_time    = Gosu::milliseconds/1000.0
+      @previous_time ||= @current_time - update_interval/1000.0
+      @dt              = @current_time - @previous_time
+      @previous_time   = @current_time
     end
     
     def self.inherited(subclass)
       def subclass.method_added(name)
         if name == :update
+          ## Prevent infinite loop
           return if caller.first.match(/^(.+?):(\d+)(?::in `(.*)')?/)[1].match /eval/i
+          ## Calculate_dt before update
           class_eval "def update_hook\n calculate_dt\n update_without_hook\nend"
           class_eval "alias update_without_hook update"
           class_eval "alias update update_hook"
@@ -55,4 +60,3 @@ module Okami
     
   end # Window
 end # Okami
-

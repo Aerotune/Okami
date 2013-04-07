@@ -1,4 +1,4 @@
-require 'okami/os'
+require_relative 'os'
 
 module Okami::Keyboard  
   DefaultKeySymbols = {
@@ -95,18 +95,16 @@ module Okami::Keyboard
     end
     
     def remove_key_up_listener listener
-      if listener.class == Method
-        @@key_up_listeners.delete @@key_up_listeners.key(listener)
-      else
-        @@key_up_listeners.delete listener
+      case listener
+      when Method; @@key_up_listeners.delete @@key_up_listeners.key(listener)
+      else;        @@key_up_listeners.delete listener
       end
     end
     
     def remove_key_down_listener listener
-      if listener.class == Method
-        @@key_down_listeners.delete @@key_down_listeners.key(listener)
-      else
-        @@key_down_listeners.delete listener
+      case listener
+      when Method; @@key_down_listeners.delete @@key_down_listeners.key(listener)
+      else;        @@key_down_listeners.delete listener
       end
     end
   
@@ -120,7 +118,6 @@ module Okami::Keyboard
       else
         $window.button_down? @@key_symbols.key( key_symbol )
       end
-      
     end
   
     ## Returns true if all key_symbol arguments is down
@@ -143,11 +140,35 @@ module Okami::Keyboard
   
     def button_down id
       key = @@key_symbols[id]
-      @@key_down_listeners.each { |listener, method| method.call key } if key
+      case key
+      when :left_alt,   :right_alt   then call_key_down_listeners :alt
+      when :left_shift, :right_shift then call_key_down_listeners :shift
+      when :left_ctrl,  :right_ctrl  then call_key_down_listeners :ctrl
+      when :left_cmd,   :right_cmd   then call_key_down_listeners :cmd
+      end
+      call_key_down_listeners key
     end
 
     def button_up id
       key = @@key_symbols[id]
+      case key
+      when :left_alt,   :right_alt;   call_key_up_listeners :alt
+      when :left_shift, :right_shift; call_key_up_listeners :shift
+      when :left_ctrl,  :right_ctrl;  call_key_up_listeners :ctrl
+      when :left_cmd,   :right_cmd;   call_key_up_listeners :cmd
+      end
+      call_key_up_listeners key
+    end
+    
+    
+    protected
+    
+    
+    def call_key_down_listeners key
+      @@key_down_listeners.each { |listener, method| method.call key } if key
+    end
+    
+    def call_key_up_listeners key
       @@key_up_listeners.each { |listener, method| method.call key } if key
     end
   end
