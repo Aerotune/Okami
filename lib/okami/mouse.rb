@@ -38,8 +38,9 @@ module Okami::Mouse
       not onscreen?
     end
 
-    def show; $window.cursor_visible = true  end
-    def hide; $window.cursor_visible = false end
+    def show; $window.cursor_visible = true         end
+    def hide; $window.cursor_visible = false        end
+    def visible=bool; $window.cursor_visible = bool end
     
     def add_key_down_listener listener_method
       @@key_down_listeners[ listener_method.receiver ] = listener_method
