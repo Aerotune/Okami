@@ -1,4 +1,4 @@
-require 'okami'
+require_relative '../lib/okami'
 
 Keyboard = Okami::Keyboard
 Mouse = Okami::Mouse
@@ -99,7 +99,7 @@ class GameWindow < Okami::Window
   
   def draw
     #color_fill color, z=0 fills the window with the color 
-    color_fill 0xFF334455
+    fill 0xFF334455
     @image.draw 10, 10, 0
     @sprite.draw 36, 10, 0
     @ping_pong_sprite.draw 62, 10, 0

@@ -23,29 +23,24 @@ class Window < Okami::Window
   end
   
   def mouse_down key
-    case key
-    when :left
-      puts "Left mouse button pressed!"
-    when :right
-      puts "Right mouse button pressed!"
-    when :middle
-      puts "Middle mouse button pressed!"
+    puts case key
+    when :left;   "Left mouse button pressed!"
+    when :right;  "Right mouse button pressed!"
+    when :middle; "Middle mouse button pressed!"
     end
   end
   
   def mouse_up key
-    case key
-    when :left
-      puts "Left mouse button released!"
-    when :right
-      puts "Right mouse button released!"
-    when :middle
-      puts "Middle mouse button released!"
+    puts case key
+    when :left;   "Left mouse button released!"
+    when :right;  "Right mouse button released!"
+    when :middle; "Middle mouse button released!"
     end
   end
   
   def key_down key
     puts "Key down: #{key}!"
+    
     if key == :q
       puts "Stopped listening for key down!"
       Keyboard.remove_key_down_listener method(:key_down)

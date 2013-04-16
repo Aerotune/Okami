@@ -21,16 +21,7 @@ module Okami
       Okami::Mouse.button_up id
     end
     
-    def color_fill color, z=0
-      color = case color
-      when :white then 0xFFFFFFFF
-      when :black then 0xFF000000
-      when Symbol
-        raise ArgumentError, "Unknown color #{color.inspect}"
-      else
-        color
-      end
-      
+    def fill color, z=0      
       draw_quad 0,      0,      color,
                 width,  0,      color,
                 0,      height, color,
