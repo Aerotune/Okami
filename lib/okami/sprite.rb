@@ -1,39 +1,31 @@
-class Okami::Sprite
-  Modes = [:forward, :loop, :backward, :backward_loop, :ping_pong]
+require_relative 'drawable'
 
-  attr_reader :current_image, :images, :last_frame_index
+class Okami::Sprite
+  include Okami::Drawable
+  AnimationModes = [:forward, :loop, :backward, :backward_loop, :ping_pong]
+
+  attr_reader :image, :images, :last_frame_index
   
   def initialize options
     raise_possible_errors options
+    options[:animation_mode] ||= :loop
     
-    @images = options[:images]
-    
-    @last_frame_index = @images.length - 1
-    @add       = ( options[:fps]  || 0 ) / 60.0
-    @direction =   options[:direction]
-    self.mode  =   options[:mode] || :loop
-    
-    case @direction
-    when :forward  then @frame_index = 0
-    when :backward then @frame_index = @last_frame_index+0.999
+    options.each do |key, value|
+      send "#{key}=", value
     end
     
+    set_initial_frame_index
+    init_drawable
     update_current_image
   end
   
-  def fps; @add * 60.0 end
-  def fps= fps; @add = fps / 60.0 end
-  
-	## Draw it just like a Gosu::Image !
-  def draw         *args; @current_image.draw         *args end
-  def draw_as_quad *args; @current_image.draw_as_quad *args end
-  def draw_rot     *args; @current_image.draw_rot     *args end
-  
+  def fps;      @delta_frame_index * 60.0         end
+  def fps=fps;  @delta_frame_index = fps / 60.0   end
   
   def update
     case @direction
-    when :forward  then @frame_index += @add*$window.dt*60.0
-    when :backward then @frame_index -= @add*$window.dt*60.0
+    when :forward  then @frame_index += @delta_frame_index*$window.dt*60.0
+    when :backward then @frame_index -= @delta_frame_index*$window.dt*60.0
     end
     
     @update_method.call
@@ -42,15 +34,15 @@ class Okami::Sprite
   
   
   def finished?
-    case @mode
+    case @animation_mode
     when :forward;  @frame_index == @last_frame_index
     when :backward; @frame_index == 0
     end
   end
   alias animation_finished? finished?
   
-  attr_reader :mode
-  def mode= symbol
+  attr_reader :animation_mode
+  def animation_mode= symbol
     case symbol
     when :loop
       @direction = :forward
@@ -73,12 +65,12 @@ class Okami::Sprite
       use_update method :update_ping_pong
       
     else
-      puts "Supported AnimatedSprite modes:"
-      puts self.class.modes
-      raise ArgumentError, "AnimatedSprite, mode #{symbol.inspect} not supported"
+      puts "Supported AnimatedSprite animation modes:"
+      puts AnimationModes
+      raise ArgumentError, "AnimatedSprite, animation_mode #{symbol.inspect} not supported"
     end
     
-    @mode = symbol
+    @animation_mode = symbol
   end
   
   attr_reader :frame_index
@@ -93,14 +85,28 @@ class Okami::Sprite
     (rand()*@images.length)
   end
   
+  protected
   
+  def images=images
+    @images = images
+    @last_frame_index  = @images.length - 1
+  end
+  
+  def direction=direction
+    @direction = direction
+  end
   
   private
   
-  
+  def set_initial_frame_index
+    case @direction
+    when :forward  then @frame_index = 0
+    when :backward then @frame_index = @last_frame_index+0.999
+    end
+  end
   
   def use_update method; @update_method = method end
-  def update_current_image; @current_image = @images[@frame_index] end
+  def update_current_image; @image = @images[@frame_index] end
     
   def update_loop;          @frame_index %= @images.length  end
   def update_backward_loop; @frame_index %= @images.length  end
@@ -112,20 +118,18 @@ class Okami::Sprite
   def update_forward
     @frame_index = @last_frame_index if @frame_index > @last_frame_index
   end
-  
-  
-  
+    
   def update_ping_pong
     case @direction
     when :forward
-      if @frame_index >= @last_frame_index
+      if @frame_index >= @last_frame_index+0.5
         @direction = :backward
-        @frame_index = @last_frame_index
+        @frame_index = @last_frame_index+0.5
       end
       
     when :backward
-      if @frame_index < 0
-        @frame_index = 0
+      if @frame_index < 0.5
+        @frame_index = 0.5
         @direction = :forward
       end
       

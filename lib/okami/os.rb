@@ -1,4 +1,4 @@
-module OS
+module Okami::OS
   @@system =
   case RUBY_PLATFORM
   when /darwin/i then :mac

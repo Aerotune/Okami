@@ -71,7 +71,7 @@ module Okami::Keyboard
     Gosu::KbZ => :z
   }
   
-  if OS.mac?
+  if Okami::OS.mac?
     DefaultKeySymbols[55] = :left_cmd
     DefaultKeySymbols[54] = :right_cmd
   end
