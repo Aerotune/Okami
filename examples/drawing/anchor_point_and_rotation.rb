@@ -16,7 +16,9 @@ class Window < Okami::Window
   end
   
   def update
-    @sprite.degrees += 1
+    @sprite.rotate_degrees 1
+    ## or
+    #@sprite.degrees += 1
     @sprite.update
   end
   
