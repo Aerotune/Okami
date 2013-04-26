@@ -93,13 +93,25 @@ module Okami::Mouse
   
     def button_down id
       key = @@key_symbols[id]
-      @@key_down_listeners.each { |listener, method| method.call key } if key
+      @@key_down_listeners.each { |listener, method| method.call key }
     end
 
     def button_up id
       key = @@key_symbols[id]
       @@key_up_listeners.each { |listener, method| method.call key } if key
     end
+    
+    def release_keys
+      call_key_up_on_down_keys
+      Okami::Keyboard.send :call_key_up_on_down_keys
+    end
+    
+    def call_key_up_on_down_keys
+      @@key_symbols.each do |code, key|
+        button_up key if key_down? key
+      end
+    end
+    
   end
 
 end
