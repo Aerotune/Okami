@@ -9,6 +9,7 @@ module Okami::Drawable
   end
   
   attr_accessor :x, :y, :z
+  attr_accessor :factor_x, :factor_y
   attr_accessor :center_x, :center_y
   attr_accessor :color, :draw_mode
   
