@@ -1,5 +1,3 @@
-require_relative 'os'
-
 module Okami::Keyboard  
   DefaultKeySymbols = {
     Gosu::KbUp    => :up,
@@ -71,10 +69,13 @@ module Okami::Keyboard
     Gosu::KbZ => :z
   }
   
-  if Okami::OS.mac?
-    DefaultKeySymbols[55] = :left_cmd
-    DefaultKeySymbols[54] = :right_cmd
-  end
+  # Maybe the command key will be used later
+  # Right now it's buggy
+  #require_relative 'os'
+  #if Okami::OS.mac?
+  #  DefaultKeySymbols[55] = :left_cmd
+  #  DefaultKeySymbols[54] = :right_cmd
+  #end
   
   DefaultKeySymbols.freeze
 
@@ -172,16 +173,6 @@ module Okami::Keyboard
       @@key_up_listeners.each { |listener, method| method.call key } if key
     end
     
-    def release_keys
-      call_key_up_on_down_keys
-      Mouse.send :call_key_up_on_down_keys
-    end
-    
-    def call_key_up_on_down_keys
-      @@key_symbols.each do |code, key|
-        call_key_up_listeners key if key_down? key
-      end
-    end
   end
 
 end

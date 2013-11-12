@@ -21,34 +21,22 @@ module Okami::Mouse
     def y=value; $window.mouse_y = value end
     
     def onscreen?
-      if x < 0
-        if y < 0
-          if x > $window.width
-            if y > $window.height
-              return true
-            end
-          end
-        end
-      end
-      
-      return false
+      x >= 0             &&
+      y >= 0             &&
+      x <= $window.width &&
+      y <= $window.height
     end
     
     def offscreen?
       not onscreen?
     end
 
-    def show; $window.cursor_visible = true         end
-    def hide; $window.cursor_visible = false        end
-    def visible=bool; $window.cursor_visible = bool end
+    def show;         $window.cursor_visible = true   end
+    def hide;         $window.cursor_visible = false  end
+    def visible=bool; $window.cursor_visible = bool   end
     
-    def add_key_down_listener listener_method
-      @@key_down_listeners[ listener_method.receiver ] = listener_method
-    end
-    
-    def add_key_up_listener listener_method
-      @@key_up_listeners[ listener_method.receiver ] = listener_method
-    end
+    def add_key_down_listener listener_method; @@key_down_listeners[ listener_method.receiver ] = listener_method end
+    def add_key_up_listener   listener_method; @@key_up_listeners[   listener_method.receiver ] = listener_method end
   
     def remove_key_up_listener listener
       case listener
@@ -93,23 +81,12 @@ module Okami::Mouse
   
     def button_down id
       key = @@key_symbols[id]
-      @@key_down_listeners.each { |listener, method| method.call key }
+      @@key_down_listeners.each { |listener, method| method.call key } if key
     end
 
     def button_up id
       key = @@key_symbols[id]
       @@key_up_listeners.each { |listener, method| method.call key } if key
-    end
-    
-    def release_keys
-      call_key_up_on_down_keys
-      Okami::Keyboard.send :call_key_up_on_down_keys
-    end
-    
-    def call_key_up_on_down_keys
-      @@key_symbols.each do |code, key|
-        button_up key if key_down? key
-      end
     end
     
   end
