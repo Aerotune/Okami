@@ -1,31 +1,42 @@
-require_relative 'drawable'
-
 class Okami::Sprite
-  include Okami::Drawable
-  AnimationModes = [:forward, :loop, :backward, :backward_loop, :ping_pong]
-
   attr_reader :image, :images, :last_frame_index
   
+  @@modes = {
+    loop:          {direction: :forward,  update_method: :update_loop},
+    backward_loop: {direction: :backward, update_method: :update_backward_loop},
+    reverse_loop:  {direction: :backward, update_method: :update_backward_loop},
+    forward:       {direction: :forward,  update_method: :update_forward},
+    backward:      {direction: :backward, update_method: :update_backward},
+    reverse:       {direction: :backward, update_method: :update_backward},
+    ping_pong:     {direction: :_forward, update_method: :update_ping_pong}
+  }
+  def self.modes; @@modes end
+    
   def initialize options
     raise_possible_errors options
-    options[:animation_mode] ||= :loop
     
-    options.each do |key, value|
-      send "#{key}=", value
-    end
+    self.images         = options[:images]
+    self.fps            = options[:fps]
+    self.frame_index    = options[:frame_index] if options[:frame_index]
+    self.mode = options[:mode] || :loop
     
     set_initial_frame_index
-    init_drawable
     update_current_image
+    
+    @@default_dt ||= $window.update_interval / 1000.0    
   end
+  
+  def draw       *args;            @image.draw       *args            end
+  def draw_rot   *args;            @image.draw_rot   *args            end
+  def draw_using image_attributes; @image.draw_using image_attributes end
   
   def fps;      @delta_frame_index * 60.0         end
   def fps=fps;  @delta_frame_index = fps / 60.0   end
   
-  def update
+  def update dt=@@default_dt
     case @direction
-    when :forward  then @frame_index += @delta_frame_index*$window.dt*60.0
-    when :backward then @frame_index -= @delta_frame_index*$window.dt*60.0
+    when :forward  then @frame_index += @delta_frame_index * dt * 60.0
+    when :backward then @frame_index -= @delta_frame_index * dt * 60.0
     end
     
     @update_method.call
@@ -34,43 +45,20 @@ class Okami::Sprite
   
   
   def finished?
-    case @animation_mode
+    case @mode
     when :forward;  @frame_index == @last_frame_index
     when :backward; @frame_index == 0
     end
   end
   alias animation_finished? finished?
   
-  attr_reader :animation_mode
-  def animation_mode= symbol
-    case symbol
-    when :loop
-      @direction = :forward
-      use_update method :update_loop
-      
-    when :backward_loop
-      @direction = :backward
-      use_update method :update_backward_loop
-      
-    when :forward
-      @direction = :forward
-      use_update method :update_forward
-      
-    when :backward
-      @direction = :backward
-      use_update method :update_backward
-      
-    when :ping_pong
-      @direction ||= :forward
-      use_update method :update_ping_pong
-      
-    else
-      puts "Supported AnimatedSprite animation modes:"
-      puts AnimationModes
-      raise ArgumentError, "AnimatedSprite, animation_mode #{symbol.inspect} not supported"
-    end
-    
-    @animation_mode = symbol
+  attr_reader :mode
+  def mode= name
+    mode_config = @@modes[name]
+    mode_config or raise_no_mode name
+    self.direction =        mode_config[:direction]
+    @update_method = method mode_config[:update_method]
+    @mode = name
   end
   
   attr_reader :frame_index
@@ -82,59 +70,61 @@ class Okami::Sprite
   end
   
   def random_frame_index
-    (rand()*@images.length)
+    rand * @images.length
   end
   
   protected
   
   def images=images
     @images = images
-    @last_frame_index  = @images.length - 1
+    @last_frame_index = @images.length - 1
   end
   
   def direction=direction
-    @direction = direction
+    case direction
+    when :forward;   @direction   = :forward
+    when :backward;  @direction   = :backward
+    when :_forward;  @direction ||= :forward
+    when :_backward; @direction ||= :backward 
+    end
   end
   
   private
   
   def set_initial_frame_index
     case @direction
-    when :forward  then @frame_index = 0
-    when :backward then @frame_index = @last_frame_index+0.999
+    when :forward  then @frame_index ||= 0
+    when :backward then @frame_index ||= @last_frame_index+0.999
     end
   end
   
-  def use_update method; @update_method = method end
   def update_current_image; @image = @images[@frame_index] end
-    
+  
+  #################
+  ## update_methods
+  
   def update_loop;          @frame_index %= @images.length  end
   def update_backward_loop; @frame_index %= @images.length  end
   
-  def update_backward
-    @frame_index = 0 if @frame_index < 0
-  end
-  
-  def update_forward
-    @frame_index = @last_frame_index if @frame_index > @last_frame_index
-  end
+  def update_backward;  @frame_index = 0                  if @frame_index < 0                 end
+  def update_forward;   @frame_index = @last_frame_index  if @frame_index > @last_frame_index end
     
   def update_ping_pong
     case @direction
     when :forward
       if @frame_index >= @last_frame_index+0.5
-        @direction = :backward
-        @frame_index = @last_frame_index+0.5
+        @direction    = :backward
+        @frame_index  = @last_frame_index+0.5
       end
       
     when :backward
-      if @frame_index < 0.5
-        @frame_index = 0.5
-        @direction = :forward
+      if @frame_index <= 0.5
+        @frame_index  = 0.5
+        @direction    = :forward
       end
-      
     end
   end
+  
   
   def raise_possible_errors options
     raise ArgumentError, "Sprite.new options must contain option :images" unless options[:images]
@@ -143,5 +133,11 @@ class Okami::Sprite
     
     raise ArgumentError, "Sprite.new options must contain option :fps"    unless options[:fps]
     raise TypeError, "Sprite.new option :fps must be of type Numeric"     unless options[:fps].kind_of? Numeric
+  end
+  
+  def raise_no_mode symbol
+    puts "Supported AnimatedSprite modes:"
+    puts @@modes.keys
+    raise ArgumentError, "AnimatedSprite, mode #{symbol.inspect} not supported"
   end
 end # Okami::Sprite

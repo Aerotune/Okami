@@ -11,9 +11,6 @@ class Window < Okami::Window
     
     puts "Some arrow key is down" if Okami::Keyboard.any_key_down? :left, :right, :up, :down
     puts "1, 2, and 3 pressed down simultaneously" if Okami::Keyboard.keys_down? 1,2,3
-        
-    close if Okami::OS.windows?  and  Okami::Keyboard.keys_down? :alt, :f4
-    close if Okami::OS.mac?      and  Okami::Keyboard.keys_down? :cmd, :q
   end
 end
 

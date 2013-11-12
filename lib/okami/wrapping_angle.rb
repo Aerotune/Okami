@@ -1,44 +1,42 @@
-class WrappingAngle  
+class Okami::WrappingAngle  
   Tau = Math::PI * 2
   
-  def initialize
-    @c = Complex(0,1)
+  def initialize options={}
+    self.fraction = options[:fraction]  if options.has_key? :fraction
+    self.degrees  = options[:degrees]   if options.has_key? :degrees
+    self.radians  = options[:radians]   if options.has_key? :radians
+    @radians ||= 0
   end
   
-  def rotate_radians  a; @c *= Complex(0,1)**(a/Tau * 4)  end
-  def rotate_fraction a; @c *= Complex(0,1)**(a*4)        end
-  def rotate_degrees  a; @c *= Complex(0,1)**(a/90.0)     end
+  def radians;  @radians                end
+  def fraction; @radians / Tau          end
+  def degrees;  @radians / Tau * 360.0  end
   
-  def radians;  @c.angle              end
-  def fraction; @c.angle / Tau        end
-  def degrees;  @c.angle / Tau * 360  end
-  
-  def radians=  a; @c = Complex(0,1)**(a/Tau * 4) end
-  def fraction= a; @c = Complex(0,1)**(a*4.0)     end
-  def degrees=  a; @c = Complex(0,1)**(a/90.0)    end
+  def radians=  a; @radians =  a % Tau                    end
+  def fraction= a; @radians = (a % 1.0   ) * Tau          end
+  def degrees=  a; @radians = (a % 360.0 ) / 360.0 * Tau  end
   
   ### Displaying
-  
-  begin
-    require 'fraction'
-    def pretty_angle unit=@standard_unit
-      case unit
-      when :degrees
-        "#{angle(:degrees).round}°"
-      when :fraction, :radians
-        nom, den = angle(:fraction).fraction
-        return "0τ" if nom == 0
-        return "#{nom}/#{den}τ"
-      end
-    end
-  rescue LoadError
-    def pretty_angle unit=@standard_unit
-      case unit
-      when :degrees;  "#{angle(:degrees).round}°"
-      when :radians; "#{angle(:radians)} radians"
-      when :fraction;  "#{angle(:fraction)}"
-      end
-    end
-  end
+  #begin
+  #  require 'fraction'
+  #  def pretty_angle unit=@standard_unit
+  #    case unit
+  #    when :degrees
+  #      "#{angle(:degrees).round}°"
+  #    when :fraction, :radians
+  #      nom, den = angle(:fraction).fraction
+  #      return "0τ" if nom == 0
+  #      return "#{nom}/#{den}τ"
+  #    end
+  #  end
+  #rescue LoadError
+  #  def pretty_angle unit=@standard_unit
+  #    case unit
+  #    when :degrees;  "#{angle(:degrees).round}°"
+  #    when :radians; "#{angle(:radians)} radians"
+  #    when :fraction;  "#{angle(:fraction)}"
+  #    end
+  #  end
+  #end
   
 end
